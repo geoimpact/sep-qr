@@ -17,6 +17,8 @@ const rows = [];
             console.log(`converted text ${i+1} (${row.URL}) into qr code: \n${url}`)
           });
           QRCode.toFile(path.resolve(`${__dirname}/../output/qr_${i+1}_${row.URL}.png`), row.URL, {
+            width: 512,
+            height: 512,
             color: {
               dark: '#000000', // Blue modules
               light: '#0000' // Transparent background
