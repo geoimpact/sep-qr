@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "rimraf output/* && node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://bitbucket.org/geoimpactteam/sep-qr#readme",
   "dependencies": {
     "csv-parser": "^3.0.0",
-    "qrcode": "^1.5.0"
+    "qrcode": "^1.5.0",
+    "rimraf": "^3.0.2"
   }
 }
