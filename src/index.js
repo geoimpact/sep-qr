@@ -16,7 +16,7 @@ const rows = [];
           QRCode.toString(row.URL, {type:'terminal'}, function (err, url) {
             console.log(`converted text ${i+1} (${row.URL}) into qr code: \n${url}`)
           });
-          QRCode.toFile(path.resolve(`${__dirname}/../output/qr_${i+1}_${row.URL.replace(/\//g, '{fs}')}.png`), row.URL, {
+          QRCode.toFile(path.resolve(`${__dirname}/../output/qr_${i+1}_${row.URL.replace(/\//g, 'fs')}.png`), row.URL, {
             width: 512,
             height: 512,
             color: {
@@ -25,7 +25,7 @@ const rows = [];
             }
           }, function (err) {
             if (err) throw err
-            console.log(`saved qr code: ${__dirname}/../output/qr_${i+1}_${row.URL.replace(/\//g, '{fs}')}.png`)
+            console.log(`saved qr code: ${__dirname}/../output/qr_${i+1}_${row.URL.replace(/\//g, 'fs')}.png`)
           })
         }
         res("qr codes generated");
